@@ -8,8 +8,10 @@ public class Ejercicio_3 {
 
 	public static void main(String[] args) {
 		int dimension;
+		System.out.print("Ingrese la dimensión de la matriz cuadrada (impar): ");
+		dimension = sc.nextInt();
 		do {
-			System.out.print("Ingrese la dimensión de la matriz cuadrada (impar): ");
+			System.out.print("La dimension no es impar, Ingrese la dimensión de la matriz cuadrada (impar): ");
 			dimension = sc.nextInt();
 		} while (dimension % 2 == 0); // Asegurar que la dimensión sea impar
 
