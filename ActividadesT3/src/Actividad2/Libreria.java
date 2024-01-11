@@ -186,8 +186,8 @@ public class Libreria {
 
     // Función para mostrar el triángulo superior de una matriz
     public static void trianguloSuperior(int[][] matriz) {
-        for (int i = 0; i < matriz.length; ++i) {
-            for (int j = 0; j < matriz[i].length; ++j) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
                 if (j >= i) {
                     System.out.print(matriz[i][j] + " ");
                 } else {
@@ -200,8 +200,8 @@ public class Libreria {
 
     // Función para mostrar el triángulo inferior de una matriz
     public static void trianguloInferior(int[][] matriz) {
-        for (int i = 0; i < matriz.length; ++i) {
-            for (int j = 0; j < matriz[i].length; ++j) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
                 if (j <= i) {
                     System.out.print(matriz[i][j] + " ");
                 } else {
@@ -216,7 +216,7 @@ public class Libreria {
         int[][] matriz = new int[dimension][dimension];
         Random random = new Random();
 
-        for (int i = 0; i < dimension; ++i) {
+        for (int i = 0; i < dimension; i++) {
             for (int j = 0; j < dimension; ++j) {
                 matriz[i][j] = random.nextInt(9) + 1; // Genera valores aleatorios entre 1 y 9
             }
