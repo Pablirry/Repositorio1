@@ -172,14 +172,16 @@ public class Libreria {
         return maximo;
     }
 
-    public static int[][] crearMatriz(int dimension) {
-        int[][] matriz = new int[dimension][dimension];
-        for (int i = 0; i < dimension; ++i) {
-            for (int j = 0; j < dimension; ++j) {
-                matriz[i][j] = i + j;
+    public static int[][] crearMatriz() {
+        System.out.println("Introduzca la dimension de la matriz: ");
+        int dimension = sc.nextInt();
+        int[][] m = new int[dimension][dimension];
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[0].length; j++) {
+                m[i][j] = i + j;
             }
         }
-        return matriz;
+        return m;
     }
 
     // Función para mostrar el triángulo superior de una matriz

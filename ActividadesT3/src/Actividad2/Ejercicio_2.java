@@ -8,10 +8,7 @@ public class Ejercicio_2 {
 
 	public static void main(String[] args) {
 
-		System.out.print("Ingrese la dimension de la matriz cuadrada: ");
-		int dimension = sc.nextInt();
-
-		int[][] matriz = Libreria.crearMatriz(dimension);
+		int[][] matriz = Libreria.crearMatriz();
 
 		System.out.println("Matriz generada:");
 		Libreria.mostrarMatriz(matriz);
