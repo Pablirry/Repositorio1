@@ -21,6 +21,11 @@ public class Libreria {
 		
 	}
 
+    /**
+     * Funcion para mostrar un vector
+     * @param v : entero[]
+     */
+
 	public static void mostrarVector(int[] v) {
         for(int i=0; i<v.length; i++){
             System.out.print("["+i+"]:"+v[i]+" ");
