@@ -212,19 +212,31 @@ public class Libreria {
         }
     }
 
-    public static int[][] crearMatrizReloj(int dimension) {
-        int[][] matriz = new int[dimension][dimension];
-        Random random = new Random();
+    
 
-        for (int i = 0; i < dimension; i++) {
-            for (int j = 0; j < dimension; ++j) {
-                matriz[i][j] = random.nextInt(9) + 1; // Genera valores aleatorios entre 1 y 9
+    public static int[][] crearMatrizReloj() {
+
+        System.out.println("Introduce dimension: ");
+        int dimension = sc.nextInt();
+        
+        while(dimension%2 == 0){
+            System.out.println("ERROR, introduce dimension: ");
+            dimension=sc.nextInt();
+        }
+
+        int [][] m = new int[dimension][dimension];
+        for(int i = 0; i<m.length;i++){
+            for(int j = 0; j<m[0].length;j++){
+                m[i][j]= (int) (Math.random()*9)+1;
             }
         }
-        return matriz;
+        return m;
     }
 
-    // Función para mostrar la matriz en forma de reloj de arena
+    /**
+     * Función para mostrar el reloj de arena de una matriz
+     * @param matriz : entero[][]
+     */
     public static void mostrarRelojDeArena(int[][] matriz) {
         int dimension = matriz.length;
 
