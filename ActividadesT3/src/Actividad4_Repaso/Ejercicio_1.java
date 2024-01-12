@@ -18,7 +18,15 @@ public class Ejercicio_1 {
 		 */
 
 		int v[] = { 2, 5, 8, 9, 3, 4, 6, 7 };
-		
+		mostrarVector(v);
+		insertaValor(v,11,3);
+		mostrarVector(v);
+		insertaValor(v,13,-2); //error posicion negativa
+		mostrarVector(v);
+		insertaValor(v,13,8); //error posicion fuera de rango
+		mostrarVector(v);
+		insertaValor(v,12,6);
+		mostrarVector(v);
 
 	}
 
