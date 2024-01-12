@@ -171,6 +171,11 @@ public class Libreria {
         return maximo;
     }
 
+    /**
+     * Funcion para crear una matriz mediante la formula m[i][j]=i+j
+     * @return : entero[][]
+     */
+
     public static int[][] crearMatriz() {
         System.out.println("Introduzca la dimension de la matriz: ");
         int dimension = sc.nextInt();
@@ -183,7 +188,10 @@ public class Libreria {
         return m;
     }
 
-    // Función para mostrar el triángulo superior de una matriz
+    /**
+     * Función para mostrar el triángulo superior de una matriz
+     * @param matriz : entero[][]
+     */
     public static void trianguloSuperior(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
@@ -197,7 +205,10 @@ public class Libreria {
         }
     }
 
-    // Función para mostrar el triángulo inferior de una matriz
+    /**
+     * Función para mostrar el triángulo inferior de una matriz
+     * @param matriz : entroo[][]
+     */
     public static void trianguloInferior(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
@@ -211,6 +222,12 @@ public class Libreria {
         }
     }
 
+
+    /**
+     * Función para crear una matriz aleatoria de dimension impar
+     * 
+     * @return : entero[][]
+     */
     
 
     public static int[][] crearMatrizReloj() {
@@ -239,8 +256,8 @@ public class Libreria {
     public static void mostrarRelojDeArena(int[][] matriz) {
         int dimension = matriz.length;
 
-        for (int i = 0; i < dimension; ++i) {
-            for (int j = 0; j < dimension; ++j) {
+        for (int i = 0; i < dimension; i++) {
+            for (int j = 0; j < dimension; j++) {
                 if (i <= j && i + j <= dimension - 1) {
                     System.out.print(matriz[i][j] + "   ");
                 } else if (i >= j && i + j >= dimension - 1) {
