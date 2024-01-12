@@ -8,6 +8,22 @@ public class Ejercicio_1 {
 
 	public static void main(String[] args) {
 
+		/*
+		 * int [][] generarMatriz(int filas, int columnas)
+		 * void mostrarMatriz(int m[][])
+		 * void buscarValor(int m[][], int valor)
+		 * int[] sumaPorFilas(int m[][])
+		 * int[] sumaPorColumnas(int m[][])
+		 * int [][] calcularTraspuesta(int m[][])
+		 * int [][] sumaMatrices(int a[][], int b[][])
+		 * int [][] productoMatrices(int a[][], int b[][])
+		 * int calcularSumaDiagonal(int m[][]);
+		 * int calcularSumaDiagonalInversa(int m[][]);
+		 * int [] diagonalizarMatriz(int m[][])
+		 * boolean matrizTriangularSuperior(int m[])
+		 * boolean matrizTriangularInferior(int m[]);
+		 */
+
 		System.out.println("Introduce filas");
 		int filas = sc.nextInt();
 
