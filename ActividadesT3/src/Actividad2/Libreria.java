@@ -91,6 +91,7 @@ public class Libreria {
 
     /**
      * Funcion que determina si una matriz es simetrica
+     * 
      * @param m : entero[][]
      * @return : boolean
      */
@@ -123,13 +124,13 @@ public class Libreria {
             for (int j = 0; j < m[0].length; j++) {
                 int maxFila = encontrarMaximoEnFila(m, i);
                 int minColumna = encontrarMinimoEnColumna(m, j);
-                if(m[i][j] == maxFila && m[i][j] == minColumna){
+                if (m[i][j] == maxFila && m[i][j] == minColumna) {
                     System.out.println("La posición [" + i + "][" + j + "] es un punto silla");
 
-                    tienePunto=true;
+                    tienePunto = true;
                 }
             }
-            
+
         }
         return tienePunto;
 
@@ -173,6 +174,7 @@ public class Libreria {
 
     /**
      * Funcion para crear una matriz mediante la formula m[i][j]=i+j
+     * 
      * @return : entero[][]
      */
 
@@ -190,6 +192,7 @@ public class Libreria {
 
     /**
      * Función para mostrar el triángulo superior de una matriz
+     * 
      * @param matriz : entero[][]
      */
     public static void trianguloSuperior(int[][] matriz) {
@@ -207,6 +210,7 @@ public class Libreria {
 
     /**
      * Función para mostrar el triángulo inferior de una matriz
+     * 
      * @param matriz : entroo[][]
      */
     public static void trianguloInferior(int[][] matriz) {
@@ -222,28 +226,26 @@ public class Libreria {
         }
     }
 
-
     /**
      * Función para crear una matriz aleatoria de dimension impar
      * 
      * @return : entero[][]
      */
-    
 
     public static int[][] crearMatrizReloj() {
 
         System.out.println("Introduce dimension: ");
         int dimension = sc.nextInt();
-        
-        while(dimension%2 == 0){
+
+        while (dimension % 2 == 0) {
             System.out.println("ERROR, introduce dimension: ");
-            dimension=sc.nextInt();
+            dimension = sc.nextInt();
         }
 
-        int [][] m = new int[dimension][dimension];
-        for(int i = 0; i<m.length;i++){
-            for(int j = 0; j<m[0].length;j++){
-                m[i][j]= (int) (Math.random()*9)+1;
+        int[][] m = new int[dimension][dimension];
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[0].length; j++) {
+                m[i][j] = (int) (Math.random() * 9) + 1;
             }
         }
         return m;
@@ -251,17 +253,18 @@ public class Libreria {
 
     /**
      * Función para mostrar el reloj de arena de una matriz
+     * 
      * @param matriz : entero[][]
      */
-    public static void mostrarRelojDeArena(int[][] matriz) {
-        int dimension = matriz.length;
+    public static void mostrarRelojDeArena(int[][] m) {
+        int dimension = m.length;
 
         for (int i = 0; i < dimension; i++) {
             for (int j = 0; j < dimension; j++) {
                 if (i <= j && i + j <= dimension - 1) {
-                    System.out.print(matriz[i][j] + "   ");
+                    System.out.print(m[i][j] + "   ");
                 } else if (i >= j && i + j >= dimension - 1) {
-                    System.out.print(matriz[i][j] + "   ");
+                    System.out.print(m[i][j] + "   ");
                 } else {
                     System.out.print("    "); // Espacios en blanco para posiciones fuera del reloj de arena
                 }
