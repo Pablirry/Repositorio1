@@ -30,4 +30,12 @@ public class Ejercicio_1 {
 
 	}
 
+	private static void insertaValor(int[] v, int i, int j) {
+		
+	}
+
+	private static void mostrarVector(int[] v) {
+		
+	}
+
 }
