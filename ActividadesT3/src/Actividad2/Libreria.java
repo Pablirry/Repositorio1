@@ -257,6 +257,7 @@ public class Libreria {
      * @param matriz : entero[][]
      */
     public static void mostrarRelojDeArena(int[][] m) {
+        
         int dimension = m.length;
 
         for (int i = 0; i < dimension; i++) {
