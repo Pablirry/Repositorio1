@@ -16,26 +16,24 @@ public class Ejercicio_1 {
 		 * insertado. Además, la inserción ocasiona la “desaparición” del último
 		 * elemento del vector.
 		 */
-
+		System.out.println("VECTOR");
 		int v[] = { 2, 5, 8, 9, 3, 4, 6, 7 };
-		mostrarVector(v);
-		insertaValor(v,11,3);
-		mostrarVector(v);
-		insertaValor(v,13,-2); //error posicion negativa
-		mostrarVector(v);
-		insertaValor(v,13,8); //error posicion fuera de rango
-		mostrarVector(v);
-		insertaValor(v,12,6);
-		mostrarVector(v);
+		Libreria.mostrarVector(v);
+		System.out.println("VECTOR INSERTANDO VALOR 11 EN POSICION 3");
+		Libreria.insertaValor(v,11,3);
+		Libreria.mostrarVector(v);
+		System.out.println("VECTOR INSERTANDO VALOR 13 EN POSICION -2");
+		Libreria.insertaValor(v,13,-2); //error posicion negativa
+		Libreria.mostrarVector(v);
+		System.out.println("VECTOR INSERTANDO VALOR 13 EN POSICION 8");
+		Libreria.insertaValor(v,13,8); //error posicion fuera de rango
+		Libreria.mostrarVector(v);
+		System.out.println("VECTOR INSERTANDO VALOR 12 EN POSICION 5");
+		Libreria.insertaValor(v,12,5);
+		Libreria.mostrarVector(v);
 
 	}
 
-	private static void insertaValor(int[] v, int i, int j) {
-		
-	}
-
-	private static void mostrarVector(int[] v) {
-		
-	}
+	
 
 }
