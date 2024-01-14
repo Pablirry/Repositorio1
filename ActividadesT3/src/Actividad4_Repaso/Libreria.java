@@ -1,6 +1,7 @@
 package Actividad4_Repaso;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Libreria {
 
@@ -173,14 +174,12 @@ public class Libreria {
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
 
-                if(i%2==0){
-                    m[i][j]=10;
-                }
-                else if(j%2!=0){
-                    m[i][j]=11;
-                }
-                else{
-                    m[i][j]=0;
+                if (i % 2 == 0) {
+                    m[i][j] = 10;
+                } else if (j % 2 != 0) {
+                    m[i][j] = 11;
+                } else {
+                    m[i][j] = 0;
                 }
 
             }
@@ -202,5 +201,95 @@ public class Libreria {
         }
     }
 
+    public static void ingresarNotas(Scanner sc, double[][] notas) {
 
+        for (int i = 0; i < notas.length; i++) {
+            System.out.println("\nIngrese las notas del estudiante " + (i + 1) + ":");
+            for (int j = 0; j < notas[i].length; j++) {
+                System.out.print("Ingrese la nota de la asignatura " + (j + 1) + ": ");
+                notas[i][j] = sc.nextDouble();
+            }
+        }
+    }
+
+    public static double[] calcularMediasEstudiantes(double[][] notas) {
+        double[] mediasEstudiantes = new double[notas.length];
+
+        for (int i = 0; i < notas.length; i++) {
+            double suma = 0;
+            for (int j = 0; j < notas[i].length; j++) {
+                suma += notas[i][j];
+            }
+            mediasEstudiantes[i] = suma / notas[i].length;
+        }
+
+        return mediasEstudiantes;
+    }
+
+    public static void mostrarEstudianteConMayorYMenorMedia(double[] mediasEstudiantes) {
+        int estudianteMayorMedia = 0;
+        int estudianteMenorMedia = 0;
+
+        for (int i = 1; i < mediasEstudiantes.length; i++) {
+            if (mediasEstudiantes[i] > mediasEstudiantes[estudianteMayorMedia]) {
+                estudianteMayorMedia = i;
+            }
+
+            if (mediasEstudiantes[i] < mediasEstudiantes[estudianteMenorMedia]) {
+                estudianteMenorMedia = i;
+            }
+        }
+
+        System.out.println("\nEstudiante con mayor media: estudiante " + (estudianteMayorMedia + 1));
+        System.out.println("Estudiante con menor media:  estudiante " + (estudianteMenorMedia + 1));
+
+    }
+
+    public static void mostrarEstudianteConMenorNota(double[][] notas) {
+
+        int estudianteConMenorNota = 0;
+        int asignaturaConMenorNota = 0;
+
+        for (int i = 0; i < notas.length; i++) {
+            for (int j = 1; j < notas[i].length; j++) {
+                if (notas[i][j] < notas[estudianteConMenorNota][asignaturaConMenorNota]) {
+                    estudianteConMenorNota = i;
+                    asignaturaConMenorNota = j;
+                }
+            }
+        }
+
+        System.out.println("\nEstudiante con menor nota en alguna asignatura: estudiante " + (estudianteConMenorNota + 1));
+        System.out.println("Asignatura: " + (asignaturaConMenorNota + 1));
+        System.out.println("Nota: " + notas[estudianteConMenorNota][asignaturaConMenorNota]);
+
+    }
+
+    public static void mostrarEstudianteConMayorNotaAsignatura(double[][] notas, int asignatura) {
+
+        int estudianteConMayorNota = 0;
+
+        for (int i = 1; i < notas.length; i++) {
+            if (notas[i][asignatura] > notas[estudianteConMayorNota][asignatura]) {
+                estudianteConMayorNota = i;
+            }
+        }
+
+        System.out.println("\nEstudiante con mayor nota en la asignatura " + (asignatura + 1) + ": estudiante "
+                + (estudianteConMayorNota + 1));
+        System.out.println("Nota: " + notas[estudianteConMayorNota][asignatura]);
+    }
+
+    public static void mostrarMediaAsignatura(double[][] notas, int asignatura) {
+
+        double suma = 0;
+
+        for (int i = 0; i < notas.length; i++) {
+            suma += notas[i][asignatura];
+        }
+
+        double media = suma / notas.length;
+
+        System.out.println("\nMedia de la asignatura " + (asignatura + 1) + ": " + media);
+    }
 }
