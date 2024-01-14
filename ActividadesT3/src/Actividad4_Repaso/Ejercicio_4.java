@@ -19,6 +19,8 @@ public class Ejercicio_4 {
 		 * char elegirCarta(int pos) : retorna un carácter que representa la carta.
 		 * int calcularPuntuación(int jugada[])
 		 */
+
+		/*
 		// Generar baraja
 		int[] baraja = Libreria.generarBaraja();
 
@@ -27,6 +29,8 @@ public class Ejercicio_4 {
 
 		// Jugar
 		Libreria.jugar(baraja);
+
+		*/
 	}
 
 }

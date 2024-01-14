@@ -1,6 +1,5 @@
 package Actividad4_Repaso;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Libreria {
@@ -39,6 +38,12 @@ public class Libreria {
 
     }
 
+    /**
+     * Funcion que realiza la búsqueda de una secuencia en orden creciente más larga
+     * 
+     * @param v : entero[]
+     */
+
     public static void secuencia(int[] v) {
         int longActual = 1;
         int posIncio = 0;
@@ -65,6 +70,14 @@ public class Libreria {
                 "La secuencia mas larga es de longitud " + maxLong + " y comienza en la posicion " + maxPosIncio);
 
     }
+
+    /**
+     * Funcion para comparar 2 cadenas de ADN y verificar si son iguales
+     * 
+     * @param cadenaADN1 : caracter[]
+     * @param cadenaADN2 : caracter[]
+     * @return : boolean
+     */
 
     public static boolean compararADN(char[] cadenaADN1, char[] cadenaADN2) {
 
@@ -95,77 +108,89 @@ public class Libreria {
 
     }
 
-    public static int[] generarBaraja() {
-        int[] baraja = new int[40];
-        int cont = 0;
+    /* Hay errores en esta funcion, no funciona correctamente */
 
-        for (int i = 1; i <= 7; i++) {
-            for (int j = 0; j < 4; j++) {
-                baraja[cont] = i;
-                cont++;
-            }
-        }
+    /*
+     * 
+     * public static int[] generarBaraja() {
+     * int[] baraja = new int[40];
+     * int cont = 0;
+     * 
+     * for (int i = 1; i <= 7; i++) {
+     * for (int j = 0; j < 4; j++) {
+     * baraja[cont] = i;
+     * cont++;
+     * }
+     * }
+     * 
+     * // Inicializar la baraja con valores
+     * 
+     * return baraja;
+     * 
+     * }
+     * 
+     * public static void mezclarBaraja(int[] baraja) {
+     * 
+     * for (int i = 0; i < baraja.length; i++) {
+     * int posAleatoria = (int) (Math.random() * baraja.length);
+     * int aux = baraja[i];
+     * baraja[i] = baraja[posAleatoria];
+     * baraja[posAleatoria] = aux;
+     * }
+     * 
+     * }
+     * 
+     * public static char elegirCarta(int pos) {
+     * char[] simbolos = { 'O', 'C', 'B' };
+     * int valor = pos % 10;
+     * 
+     * if (valor == 8) {
+     * return simbolos[pos / 10 - 1];
+     * } else {
+     * return (char) (valor + '0');
+     * }
+     * }
+     * 
+     * public static int calcularPuntuacion(int[] jugada) {
+     * 
+     * double puntuacion = 0;
+     * 
+     * for (int carta : jugada) {
+     * if (carta <= 7) {
+     * puntuacion += carta;
+     * } else {
+     * puntuacion += 0.5;
+     * }
+     * }
+     * 
+     * return (int) puntuacion;
+     * }
+     * 
+     * public static void jugar(int[] baraja) {
+     * int[] jugador = new int[5];
+     * int indiceJugador = 0;
+     * 
+     * // Cada jugador elige una carta
+     * for (int i = 0; i < 5; i++) {
+     * jugador[indiceJugador] = baraja[i];
+     * indiceJugador++;
+     * }
+     * 
+     * // Mostrar cartas del jugador
+     * System.out.println("Cartas del jugador: " + Arrays.toString(jugador));
+     * 
+     * // Calcular puntuación del jugador
+     * double puntuacionJugador = calcularPuntuacion(jugador);
+     * System.out.println("Puntuación del jugador: " + puntuacionJugador);
+     * }
+     */
 
-        // Inicializar la baraja con valores
-
-        return baraja;
-
-    }
-
-    public static void mezclarBaraja(int[] baraja) {
-
-        for (int i = 0; i < baraja.length; i++) {
-            int posAleatoria = (int) (Math.random() * baraja.length);
-            int aux = baraja[i];
-            baraja[i] = baraja[posAleatoria];
-            baraja[posAleatoria] = aux;
-        }
-
-    }
-
-    public static char elegirCarta(int pos) {
-        char[] simbolos = { 'O', 'C', 'B' };
-        int valor = pos % 10;
-
-        if (valor == 8) {
-            return simbolos[pos / 10 - 1];
-        } else {
-            return (char) (valor + '0');
-        }
-    }
-
-    public static int calcularPuntuacion(int[] jugada) {
-
-        double puntuacion = 0;
-
-        for (int carta : jugada) {
-            if (carta <= 7) {
-                puntuacion += carta;
-            } else {
-                puntuacion += 0.5;
-            }
-        }
-
-        return (int) puntuacion;
-    }
-
-    public static void jugar(int[] baraja) {
-        int[] jugador = new int[5];
-        int indiceJugador = 0;
-
-        // Cada jugador elige una carta
-        for (int i = 0; i < 5; i++) {
-            jugador[indiceJugador] = baraja[i];
-            indiceJugador++;
-        }
-
-        // Mostrar cartas del jugador
-        System.out.println("Cartas del jugador: " + Arrays.toString(jugador));
-
-        // Calcular puntuación del jugador
-        double puntuacionJugador = calcularPuntuacion(jugador);
-        System.out.println("Puntuación del jugador: " + puntuacionJugador);
-    }
+    /**
+     * Funcion para rellenar una matriz en columnas impares con 11 y en filas pares
+     * con 10 y el resto 0
+     * 
+     * @param m : entero [][]
+     */
 
     public static void rellenarMatriz(int[][] m) {
         int filas = m.length;
@@ -259,7 +284,8 @@ public class Libreria {
             }
         }
 
-        System.out.println("\nEstudiante con menor nota en alguna asignatura: estudiante " + (estudianteConMenorNota + 1));
+        System.out.println(
+                "\nEstudiante con menor nota en alguna asignatura: estudiante " + (estudianteConMenorNota + 1));
         System.out.println("Asignatura: " + (asignaturaConMenorNota + 1));
         System.out.println("Nota: " + notas[estudianteConMenorNota][asignaturaConMenorNota]);
 
@@ -292,4 +318,77 @@ public class Libreria {
 
         System.out.println("\nMedia de la asignatura " + (asignatura + 1) + ": " + media);
     }
+
+    public static boolean esMatrizMagica(int[][] matriz) {
+
+        int n = matriz.length;
+
+        // Calcular la suma de la primera fila para comparar con otras filas y columnas
+        int sumaPrimeraFila = sumaFila(matriz, 0);
+
+        // Verificar la suma de cada fila
+        for (int i = 1; i < n; i++) {
+            if (sumaFila(matriz, i) != sumaPrimeraFila) {
+                return false;
+            }
+        }
+
+        // Verificar la suma de cada columna
+        for (int j = 0; j < n; j++) {
+            if (sumaColumna(matriz, j) != sumaPrimeraFila) {
+                return false;
+            }
+        }
+
+        // Verificar la suma de la diagonal principal
+        if (sumaDiagonalPrincipal(matriz) != sumaPrimeraFila) {
+            return false;
+        }
+
+        // Verificar la suma de la diagonal secundaria
+        if (sumaDiagonalSecundaria(matriz) != sumaPrimeraFila) {
+            return false;
+        }
+
+        // Si pasa todas las verificaciones, la matriz es mágica
+        return true;
+    }
+
+    // Función para calcular la suma de una fila
+    public static int sumaFila(int[][] matriz, int fila) {
+        int suma = 0;
+        for (int j = 0; j < matriz.length; j++) {
+            suma += matriz[fila][j];
+        }
+        return suma;
+    }
+
+    // Función para calcular la suma de una columna
+    public static int sumaColumna(int[][] matriz, int columna) {
+        int suma = 0;
+        for (int i = 0; i < matriz.length; i++) {
+            suma += matriz[i][columna];
+        }
+        return suma;
+    }
+
+    // Función para calcular la suma de la diagonal principal
+    public static int sumaDiagonalPrincipal(int[][] matriz) {
+        int suma = 0;
+        for (int i = 0; i < matriz.length; i++) {
+            suma += matriz[i][i];
+        }
+        return suma;
+    }
+
+    // Función para calcular la suma de la diagonal secundaria
+    public static int sumaDiagonalSecundaria(int[][] matriz) {
+        int n = matriz.length;
+        int suma = 0;
+        for (int i = 0; i < n; i++) {
+            suma += matriz[i][n - 1 - i];
+        }
+        return suma;
+    }
+
 }

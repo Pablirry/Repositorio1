@@ -14,6 +14,18 @@ public class Ejercicio_7 {
 		 * int sumaDiagonalSecundaria(int m[][])
 		 */
 
+		int[][] matriz = {
+				{ 8, 1, 6 },
+				{ 3, 5, 7 },
+				{ 4, 9, 2 }
+		};
+
+		if (Libreria.esMatrizMagica(matriz)) {
+			System.out.println("La matriz es mágica.");
+		} else {
+			System.out.println("La matriz no es mágica.");
+		}
+
 	}
 
 }
