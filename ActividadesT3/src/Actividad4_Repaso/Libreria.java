@@ -63,4 +63,33 @@ public class Libreria {
 
     }
 
+    public static boolean compararADN(char[] cadenaADN1, char[] cadenaADN2) {
+
+        if (cadenaADN1.length != cadenaADN2.length) {
+            return false;
+        }
+
+        // Concatenar la cadenaADN1 consigo misma para abordar la propiedad cíclica
+        char[] cadenaADNConcatenada = new char[cadenaADN1.length * 2];
+        System.arraycopy(cadenaADN1, 0, cadenaADNConcatenada, 0, cadenaADN1.length);
+        System.arraycopy(cadenaADN1, 0, cadenaADNConcatenada, cadenaADN1.length, cadenaADN1.length);
+
+        // Verificar si cadenaADN2 es una subcadena de cadenaADNConcatenada
+        for (int i = 0; i < cadenaADNConcatenada.length - cadenaADN2.length + 1; i++) {
+            boolean coinciden = true;
+            for (int j = 0; j < cadenaADN2.length; j++) {
+                if (cadenaADNConcatenada[i + j] != cadenaADN2[j]) {
+                    coinciden = false;
+                    break;
+                }
+            }
+            if (coinciden) {
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
 }

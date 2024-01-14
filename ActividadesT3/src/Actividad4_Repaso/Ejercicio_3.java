@@ -14,6 +14,24 @@ public class Ejercicio_3 {
 		 * puede comenzar en cualquier posición.
 		 */
 
+		char[] cadenaADN1 = { 'A', 'T', 'G', 'C', 'G', 'T', 'A', 'T' };
+		char[] cadenaADN2 = { 'A', 'T', 'G', 'T', 'G', 'C', 'G', 'T' };
+
+		// Llamada al método que compara las cadenas de ADN
+		boolean coinciden = Libreria.compararADN(cadenaADN1, cadenaADN2);
+
+		// Mostrar las cadenas de ADN
+        System.out.println("Cadena de ADN 1: " + new String(cadenaADN1));
+        System.out.println("Cadena de ADN 2: " + new String(cadenaADN2));
+
+		// Mostrar el resultado
+		if (coinciden) {
+			System.out.println("Las cadenas de ADN coinciden.");
+		} else {
+			System.out.println("Las cadenas de ADN no coinciden.");
+		}
+
 	}
 
+	
 }
