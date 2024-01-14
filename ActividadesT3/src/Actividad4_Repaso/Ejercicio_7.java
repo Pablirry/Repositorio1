@@ -20,11 +20,31 @@ public class Ejercicio_7 {
 				{ 4, 9, 2 }
 		};
 
+		int[][] matriz2 = {
+			{ 8, 1, 6 },
+			{ 3, 5, 7 },
+			{ 4, 5, 2 }
+	};
+
+		System.out.println("MATRIZ 1:");
+		Libreria.mostrarMatriz(matriz);
+
 		if (Libreria.esMatrizMagica(matriz)) {
 			System.out.println("La matriz es mágica.");
 		} else {
 			System.out.println("La matriz no es mágica.");
 		}
+
+		System.out.println("MATRIZ 2:");
+		Libreria.mostrarMatriz(matriz2);
+
+		if (Libreria.esMatrizMagica(matriz2)) {
+			System.out.println("La matriz es mágica.");
+		} else {
+			System.out.println("La matriz no es mágica.");
+		}
+
+
 
 	}
 
