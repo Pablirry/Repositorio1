@@ -17,13 +17,14 @@ public class Ejercicio_2 {
 		 * void posicionValorMinimo(int v[])
 		 * boolean buscarValor(int v[], int valor) : retorna true si lo encuentra
 		 * int v[] productoVectorial(int a[], int b[])
-		 * int [] generarVectorAleatorio(int num); crear un vector que almacene los números generados de forma aleatoria comprendidos entre 1 y el parámetro num.
+		 * int [] generarVectorAleatorio(int num); crear un vector que almacene los
+		 * números generados de forma aleatoria comprendidos entre 1 y el parámetro num.
 		 * void calcularDesviación(int v[])
-		 	* Se define la desviación como la media de la diferencia entre el valor origina
-		 	* y la media de los valores del vector.
+		 * Se define la desviación como la media de la diferencia entre el valor origina
+		 * y la media de los valores del vector.
 		 * Funciones auxiliares:
-			* int media(int v[])
-			* int [] calculaDiferencia(int v[])
+		 * int media(int v[])
+		 * int [] calculaDiferencia(int v[])
 		 */
 
 		int a[] = Libreria2.generarVectorAleatorio(10, 9);

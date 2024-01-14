@@ -14,12 +14,19 @@ public class Ejercicio_4 {
 		 * Math.random()
 		 * Cada jugador almacena en un vector las cartas elegidas
 		 * Implementar las siguientes funciones:
-		    * int v[] generarBaraja()
-		    * void mezclarBaraja(int bajara[])
-		    * char elegirCarta(int pos) : retorna un carácter que representa la carta.
-		    * int calcularPuntuación(int jugada[])
+		 * int v[] generarBaraja()
+		 * void mezclarBaraja(int bajara[])
+		 * char elegirCarta(int pos) : retorna un carácter que representa la carta.
+		 * int calcularPuntuación(int jugada[])
 		 */
+		// Generar baraja
+		int[] baraja = Libreria.generarBaraja();
 
+		// Mezclar baraja
+		Libreria.mezclarBaraja(baraja);
+
+		// Jugar
+		Libreria.jugar(baraja);
 	}
 
 }

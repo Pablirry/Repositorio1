@@ -9,6 +9,12 @@ public class Ejercicio_5 {
 		 * contenga en las filas pares 10 y en las columnas impares 11, el resto 0
 		 */
 
+		int[][] m = new int[5][10];
+
+		Libreria.rellenarMatriz(m);
+
+		Libreria.mostrarMatriz(m);
+
 	}
 
 }

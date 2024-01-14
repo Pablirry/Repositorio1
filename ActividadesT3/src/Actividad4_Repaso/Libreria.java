@@ -1,5 +1,7 @@
 package Actividad4_Repaso;
 
+import java.util.Arrays;
+
 public class Libreria {
 
     /**
@@ -91,5 +93,114 @@ public class Libreria {
         return false;
 
     }
+
+    public static int[] generarBaraja() {
+        int[] baraja = new int[40];
+        int cont = 0;
+
+        for (int i = 1; i <= 7; i++) {
+            for (int j = 0; j < 4; j++) {
+                baraja[cont] = i;
+                cont++;
+            }
+        }
+
+        // Inicializar la baraja con valores
+
+        return baraja;
+
+    }
+
+    public static void mezclarBaraja(int[] baraja) {
+
+        for (int i = 0; i < baraja.length; i++) {
+            int posAleatoria = (int) (Math.random() * baraja.length);
+            int aux = baraja[i];
+            baraja[i] = baraja[posAleatoria];
+            baraja[posAleatoria] = aux;
+        }
+
+    }
+
+    public static char elegirCarta(int pos) {
+        char[] simbolos = { 'O', 'C', 'B' };
+        int valor = pos % 10;
+
+        if (valor == 8) {
+            return simbolos[pos / 10 - 1];
+        } else {
+            return (char) (valor + '0');
+        }
+    }
+
+    public static int calcularPuntuacion(int[] jugada) {
+
+        double puntuacion = 0;
+
+        for (int carta : jugada) {
+            if (carta <= 7) {
+                puntuacion += carta;
+            } else {
+                puntuacion += 0.5;
+            }
+        }
+
+        return (int) puntuacion;
+    }
+
+    public static void jugar(int[] baraja) {
+        int[] jugador = new int[5];
+        int indiceJugador = 0;
+
+        // Cada jugador elige una carta
+        for (int i = 0; i < 5; i++) {
+            jugador[indiceJugador] = baraja[i];
+            indiceJugador++;
+        }
+
+        // Mostrar cartas del jugador
+        System.out.println("Cartas del jugador: " + Arrays.toString(jugador));
+
+        // Calcular puntuación del jugador
+        double puntuacionJugador = calcularPuntuacion(jugador);
+        System.out.println("Puntuación del jugador: " + puntuacionJugador);
+    }
+
+    public static void rellenarMatriz(int[][] m) {
+        int filas = m.length;
+        int columnas = m[0].length;
+
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+
+                if(i%2==0){
+                    m[i][j]=10;
+                }
+                else if(j%2!=0){
+                    m[i][j]=11;
+                }
+                else{
+                    m[i][j]=0;
+                }
+
+            }
+        }
+    }
+
+    /**
+     * funcion que muestra los valores de una matriz por filas
+     * 
+     * @param m matriz de enteros
+     */
+    public static void mostrarMatriz(int m[][]) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[0].length; j++) {
+                System.out.print(m[i][j] + "\t");
+                // \t sirve para que salga tabulada
+            }
+            System.out.println();
+        }
+    }
+
 
 }
