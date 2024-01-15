@@ -20,17 +20,8 @@ public class Ejercicio_4 {
 		 * int calcularPuntuación(int jugada[])
 		 */
 
-		/*
-		// Generar baraja
-		int[] baraja = Libreria.generarBaraja();
-
-		// Mezclar baraja
-		Libreria.mezclarBaraja(baraja);
-
-		// Jugar
-		Libreria.jugar(baraja);
-
-		*/
+		int baraja[]=Libreria.generarBaraja();
+		Libreria.mostrarBaraja(baraja);
 	}
 
 }

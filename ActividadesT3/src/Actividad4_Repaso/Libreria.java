@@ -2,8 +2,6 @@ package Actividad4_Repaso;
 
 import java.util.Scanner;
 
-
-
 public class Libreria {
 
     static Scanner sc = new Scanner(System.in);
@@ -82,111 +80,55 @@ public class Libreria {
      * @return : boolean
      */
 
-    public static boolean compararADN(char[] cadenaADN1, char[] cadenaADN2) {
+    public static boolean compararADN(char[] sec1, char[] sec2) {
 
-        if (cadenaADN1.length != cadenaADN2.length) {
-            return false;
-        }
+        for (int i = 0; i < sec2.length; i++) {
+            if (sec2[i] == sec1[0]) {
+                int indexSec1 = 0;
+                int indexSec2 = i;
+                while (indexSec1 < sec1.length && sec1[indexSec1] == sec2[indexSec2]) {
+                    indexSec1++;
+                    indexSec2++;
+                    if (indexSec2 == sec2.length) {
+                        indexSec2 = 0;
+                    }
+                }
 
-        // Concatenar la cadenaADN1 consigo misma para abordar la propiedad cíclica
-        char[] cadenaADNConcatenada = new char[cadenaADN1.length * 2];
-        System.arraycopy(cadenaADN1, 0, cadenaADNConcatenada, 0, cadenaADN1.length);
-        System.arraycopy(cadenaADN1, 0, cadenaADNConcatenada, cadenaADN1.length, cadenaADN1.length);
-
-        // Verificar si cadenaADN2 es una subcadena de cadenaADNConcatenada
-        for (int i = 0; i < cadenaADNConcatenada.length - cadenaADN2.length + 1; i++) {
-            boolean coinciden = true;
-            for (int j = 0; j < cadenaADN2.length; j++) {
-                if (cadenaADNConcatenada[i + j] != cadenaADN2[j]) {
-                    coinciden = false;
-                    break;
+                if (indexSec1 == sec1.length) {
+                    return true;
                 }
             }
-            if (coinciden) {
-                return true;
-            }
-        }
 
+        }
         return false;
 
     }
 
-    /* Hay errores en esta funcion, no funciona correctamente */
+    public static int[] generarBaraja() {
+        int v[] = new int[40];
+        int pos = 0;
+        for (int veces = 1; veces <= 4; veces++) {
+            for (int valor = 1; valor <= 7; valor++) {
+                v[pos] = valor;
+                pos++;
+            }
 
-    /*
-     * 
-     * public static int[] generarBaraja() {
-     * int[] baraja = new int[40];
-     * int cont = 0;
-     * 
-     * for (int i = 1; i <= 7; i++) {
-     * for (int j = 0; j < 4; j++) {
-     * baraja[cont] = i;
-     * cont++;
-     * }
-     * }
-     * 
-     * // Inicializar la baraja con valores
-     * 
-     * return baraja;
-     * 
-     * }
-     * 
-     * public static void mezclarBaraja(int[] baraja) {
-     * 
-     * for (int i = 0; i < baraja.length; i++) {
-     * int posAleatoria = (int) (Math.random() * baraja.length);
-     * int aux = baraja[i];
-     * baraja[i] = baraja[posAleatoria];
-     * baraja[posAleatoria] = aux;
-     * }
-     * 
-     * }
-     * 
-     * public static char elegirCarta(int pos) {
-     * char[] simbolos = { 'O', 'C', 'B' };
-     * int valor = pos % 10;
-     * 
-     * if (valor == 8) {
-     * return simbolos[pos / 10 - 1];
-     * } else {
-     * return (char) (valor + '0');
-     * }
-     * }
-     * 
-     * public static int calcularPuntuacion(int[] jugada) {
-     * 
-     * double puntuacion = 0;
-     * 
-     * for (int carta : jugada) {
-     * if (carta <= 7) {
-     * puntuacion += carta;
-     * } else {
-     * puntuacion += 0.5;
-     * }
-     * }
-     * 
-     * return (int) puntuacion;
-     * }
-     * 
-     * public static void jugar(int[] baraja) {
-     * int[] jugador = new int[5];
-     * int indiceJugador = 0;
-     * 
-     * // Cada jugador elige una carta
-     * for (int i = 0; i < 5; i++) {
-     * jugador[indiceJugador] = baraja[i];
-     * indiceJugador++;
-     * }
-     * 
-     * // Mostrar cartas del jugador
-     * System.out.println("Cartas del jugador: " + Arrays.toString(jugador));
-     * 
-     * // Calcular puntuación del jugador
-     * double puntuacionJugador = calcularPuntuacion(jugador);
-     * System.out.println("Puntuación del jugador: " + puntuacionJugador);
-     * }
-     */
+            for (int valor = 10; valor <= 12; valor++) {
+                v[pos] = valor;
+                pos++;
+            }
+        }
+        return v;
+    }
+
+    public static void mostrarBaraja(int[] v) {
+        for (int i = 0; i < v.length; i++) {
+            if (i % 10 == 0) {
+                System.out.println();
+            }
+            System.out.print(v[i] + " ");
+        }
+    }
 
     /**
      * Funcion para rellenar una matriz en columnas impares con 11 y en filas pares
@@ -231,6 +173,7 @@ public class Libreria {
 
     /**
      * Funcion para ingresar las notas de un estudiante en una matriz
+     * 
      * @param notas : double[][]
      */
 
