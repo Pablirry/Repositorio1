@@ -14,7 +14,7 @@ public class Ejercicio_2 {
 		int[] vector = { 4, 8, 4, 2, 3, 5, 7, 1, 6 };
 
 		Libreria.mostrarVector(vector);
-		Libreria.secuencia(vector);
+		Libreria.calcularSecuencia(vector);
 
 	}
 

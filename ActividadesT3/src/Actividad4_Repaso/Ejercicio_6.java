@@ -27,7 +27,7 @@ public class Ejercicio_6 {
         double[][] notas = new double[n][m];
 
         // Ingresar las notas de los estudiantes
-        Libreria.ingresarNotas(sc, notas);
+        Libreria.ingresarNotas(notas);
 
         // Calcular la media de los estudiantes y almacenarlas en un vector
         double[] mediasEstudiantes = Libreria.calcularMediasEstudiantes(notas);

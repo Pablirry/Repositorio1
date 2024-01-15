@@ -2,7 +2,11 @@ package Actividad4_Repaso;
 
 import java.util.Scanner;
 
+
+
 public class Libreria {
+
+    static Scanner sc = new Scanner(System.in);
 
     /**
      * Inserta un valor en el vector
@@ -44,30 +48,29 @@ public class Libreria {
      * @param v : entero[]
      */
 
-    public static void secuencia(int[] v) {
-        int longActual = 1;
-        int posIncio = 0;
-        int maxLong = 1;
-        int maxPosIncio = 0;
+    public static void calcularSecuencia(int[] v) {
 
-        for (int i = 1; i < v.length; i++) {
-            if (v[i] > v[i - 1]) {
-                longActual++;
-            } else {
-                if (longActual > maxLong) {
-                    maxLong = longActual;
-                    maxPosIncio = posIncio;
+        int longMax = Integer.MIN_VALUE;
+        int posIncioMax = 0;
+        for (int i = 0; i < v.length - 1; i++) {
+            if (v[i] < v[i + 1]) {
+                int longitud = 1;
+                int posIncio = i;
+                while (i < v.length - 1 && v[i] < v[i + 1]) {
+                    longitud++;
+                    i++;
                 }
-                longActual = 1;
-                posIncio = i;
+                if (longitud > longMax) {
+                    longMax = longitud;
+                    posIncioMax = posIncio;
+                }
             }
         }
-        if (longActual > maxLong) {
-            maxLong = longActual;
-            maxPosIncio = posIncio;
+        if (longMax == Integer.MIN_VALUE) {
+            System.out.println("Secuencia no encontrada");
+        } else {
+            System.out.println("Secuencia encontrada de longitud " + longMax + " y desde la posicion " + posIncioMax);
         }
-        System.out.println(
-                "La secuencia mas larga es de longitud " + maxLong + " y comienza en la posicion " + maxPosIncio);
 
     }
 
@@ -214,7 +217,7 @@ public class Libreria {
     /**
      * funcion que muestra los valores de una matriz por filas
      * 
-     * @param m matriz de enteros
+     * @param m : entero[][]
      */
     public static void mostrarMatriz(int m[][]) {
         for (int i = 0; i < m.length; i++) {
@@ -226,7 +229,12 @@ public class Libreria {
         }
     }
 
-    public static void ingresarNotas(Scanner sc, double[][] notas) {
+    /**
+     * Funcion para ingresar las notas de un estudiante en una matriz
+     * @param notas : double[][]
+     */
+
+    public static void ingresarNotas(double[][] notas) {
 
         for (int i = 0; i < notas.length; i++) {
             System.out.println("\nIngrese las notas del estudiante " + (i + 1) + ":");
