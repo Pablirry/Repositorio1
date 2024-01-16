@@ -104,6 +104,12 @@ public class Libreria {
 
     }
 
+    /**
+     * Funcion que genera numeros de una baraje del 1 al 7 y del 10 al 12
+     * 
+     * @return : entero[]
+     */
+
     public static int[] generarBaraja() {
         int v[] = new int[40];
         int pos = 0;
