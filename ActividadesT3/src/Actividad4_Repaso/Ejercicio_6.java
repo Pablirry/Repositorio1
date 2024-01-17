@@ -39,10 +39,10 @@ public class Ejercicio_6 {
 		Libreria.mostrarEstudianteConMenorNota(notas);
 
         // Mostrar el estudiante con la mayor nota en la asignatura 3
-        Libreria.mostrarEstudianteConMayorNotaAsignatura(notas, 2);
+        Libreria.mostrarEstudianteConMayorNotaAsignatura(notas, 3);
 
         // Mostrar la media de la asignatura 1
-        Libreria.mostrarMediaAsignatura(notas, 0);
+        Libreria.mostrarMediaAsignatura(notas, 1);
 
 	}
 

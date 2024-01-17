@@ -194,6 +194,12 @@ public class Libreria {
         }
     }
 
+    /**
+     * Funcion para calcular las medias de los estudiantes
+     * @param notas : double[][]
+     * @return double []
+     */
+
     public static double[] calcularMediasEstudiantes(double[][] notas) {
         double[] mediasEstudiantes = new double[notas.length];
 
@@ -207,6 +213,11 @@ public class Libreria {
 
         return mediasEstudiantes;
     }
+
+    /**
+     * Funcion para mostrar los estudiantes con mayor y menor media
+     * @param mediasEstudiantes : double[]
+     */
 
     public static void mostrarEstudianteConMayorYMenorMedia(double[] mediasEstudiantes) {
         int estudianteMayorMedia = 0;
@@ -226,6 +237,11 @@ public class Libreria {
         System.out.println("Estudiante con menor media:  estudiante " + (estudianteMenorMedia + 1));
 
     }
+
+    /**
+     * Funcion para mostrar el estudiante con menor nota
+     * @param notas : double[][]
+     */
 
     public static void mostrarEstudianteConMenorNota(double[][] notas) {
 
@@ -248,6 +264,12 @@ public class Libreria {
 
     }
 
+    /**
+     * Funcion para mostrar los estdiante que tienen la mayor nota en cada asignatura
+     * @param notas : double[][]
+     * @param asignatura : entero
+     */
+
     public static void mostrarEstudianteConMayorNotaAsignatura(double[][] notas, int asignatura) {
 
         int estudianteConMayorNota = 0;
@@ -263,6 +285,12 @@ public class Libreria {
         System.out.println("Nota: " + notas[estudianteConMayorNota][asignatura]);
     }
 
+    /**
+     * Funcion para mostrar la media de una asignatura
+     * @param notas : double[][]
+     * @param asignatura : entero
+     */
+
     public static void mostrarMediaAsignatura(double[][] notas, int asignatura) {
 
         double suma = 0;
@@ -275,6 +303,12 @@ public class Libreria {
 
         System.out.println("\nMedia de la asignatura " + (asignatura + 1) + ": " + media);
     }
+
+    /**
+     * Funcion que muestrar si una matriz es mágica o no
+     * @param matriz : entero[][]
+     * @return : boolean
+     */
 
     public static boolean esMatrizMagica(int[][] matriz) {
 
@@ -311,7 +345,12 @@ public class Libreria {
         return true;
     }
 
-    // Función para calcular la suma de una fila
+    /**
+     * Función para calcular la suma de una fila
+     * @param matriz : entero[][]
+     * @param fila : entero
+     * @return : entero
+     */
     public static int sumaFila(int[][] matriz, int fila) {
         int suma = 0;
         for (int j = 0; j < matriz.length; j++) {
@@ -320,7 +359,12 @@ public class Libreria {
         return suma;
     }
 
-    // Función para calcular la suma de una columna
+    /**
+     * Función para calcular la suma de una columna
+     * @param matriz : entero[][]
+     * @param columna : entero
+     * @return : entero
+     */
     public static int sumaColumna(int[][] matriz, int columna) {
         int suma = 0;
         for (int i = 0; i < matriz.length; i++) {
@@ -329,7 +373,11 @@ public class Libreria {
         return suma;
     }
 
-    // Función para calcular la suma de la diagonal principal
+    /**
+     * Función para calcular la suma de la diagonal principal
+     * @param matriz : entero[][]
+     * @return : entero
+     */
     public static int sumaDiagonalPrincipal(int[][] matriz) {
         int suma = 0;
         for (int i = 0; i < matriz.length; i++) {
@@ -338,7 +386,11 @@ public class Libreria {
         return suma;
     }
 
-    // Función para calcular la suma de la diagonal secundaria
+    /**
+     * Función para calcular la suma de la diagonal secundaria
+     * @param matriz : entero
+     * @return : entero
+     */
     public static int sumaDiagonalSecundaria(int[][] matriz) {
         int n = matriz.length;
         int suma = 0;
